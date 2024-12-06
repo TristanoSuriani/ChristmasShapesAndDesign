@@ -1,4 +1,4 @@
-package nl.suriani.christmas.shapes.and.design.usecase.fetch_items;
+package nl.suriani.christmas.shapes.and.design.usecase.search_items;
 
 import java.util.Objects;
 

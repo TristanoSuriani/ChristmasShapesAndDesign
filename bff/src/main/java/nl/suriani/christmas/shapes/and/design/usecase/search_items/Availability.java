@@ -1,4 +1,4 @@
-package nl.suriani.christmas.shapes.and.design.interfaces.search;
+package nl.suriani.christmas.shapes.and.design.usecase.search_items;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

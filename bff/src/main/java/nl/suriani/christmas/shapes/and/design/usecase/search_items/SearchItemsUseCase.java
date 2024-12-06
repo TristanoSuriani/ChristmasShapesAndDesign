@@ -1,7 +1,6 @@
-package nl.suriani.christmas.shapes.and.design.usecase.fetch_items;
+package nl.suriani.christmas.shapes.and.design.usecase.search_items;
 
 import lombok.RequiredArgsConstructor;
-import nl.suriani.christmas.shapes.and.design.interfaces.search.SearchItem;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

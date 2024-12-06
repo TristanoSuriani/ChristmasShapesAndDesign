@@ -15,7 +15,7 @@
     "itemId": {
       "type": "uid"
     },
-    "Description": {
+    "description": {
       "type": "string"
     },
     "suggestedSellingPrice": {

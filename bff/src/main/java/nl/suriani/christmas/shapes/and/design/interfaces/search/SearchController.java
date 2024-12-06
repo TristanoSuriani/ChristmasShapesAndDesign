@@ -1,14 +1,13 @@
 package nl.suriani.christmas.shapes.and.design.interfaces.search;
 
 import lombok.RequiredArgsConstructor;
-import nl.suriani.christmas.shapes.and.design.usecase.fetch_items.SearchItemsQuery;
-import nl.suriani.christmas.shapes.and.design.usecase.fetch_items.SearchItemsUseCase;
+import nl.suriani.christmas.shapes.and.design.usecase.search_items.SearchItem;
+import nl.suriani.christmas.shapes.and.design.usecase.search_items.SearchItemsQuery;
+import nl.suriani.christmas.shapes.and.design.usecase.search_items.SearchItemsUseCase;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController()

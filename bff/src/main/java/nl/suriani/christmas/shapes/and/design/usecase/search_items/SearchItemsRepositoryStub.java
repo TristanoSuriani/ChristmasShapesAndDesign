@@ -1,15 +1,12 @@
-package nl.suriani.christmas.shapes.and.design.usecase.fetch_items;
+package nl.suriani.christmas.shapes.and.design.usecase.search_items;
 
-import nl.suriani.christmas.shapes.and.design.interfaces.search.Availability;
-import nl.suriani.christmas.shapes.and.design.interfaces.search.SearchItem;
-import nl.suriani.christmas.shapes.and.design.interfaces.search.SearchItemId;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-@Service
+//@Service
 public class SearchItemsRepositoryStub implements SearchItemsRepository {
     @Override
     public List<SearchItem> search(SearchItemsQuery query) {
