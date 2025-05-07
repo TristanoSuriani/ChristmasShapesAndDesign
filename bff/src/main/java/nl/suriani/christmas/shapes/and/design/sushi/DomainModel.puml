@@ -1,0 +1,67 @@
+@startuml
+
+class DiningSession {
+    - id: UUID (1..1)
+    - status: DiningSessionStatus (1..1)
+    - tableSessions: List<TableSession> (1..n)
+    - reservation: Reservation (0..1)
+    - pricingProfile: PricingProfile (1..1)
+}
+
+class TableSession {
+    - id: UUID (1..1)
+    - status: TableSessionStatus (1..1)
+    - round: Round[] (0..n)
+    - numberOfAdults: int (0..n)
+    - numberOfChildren: int (0..n)
+}
+
+note right of TableSession : numberOfAdults + numberOfAdults > 0
+
+class Reservation {
+    - id: UUID (1..1)
+    - name: String (1..1)
+    - email: String (0..1)
+    - telephoneNumber: String (0..1)
+    - numberOfPeople: String (0..n)
+}
+
+class TableSession
+class Item
+class Round {
+    - id: UUID (1..1)
+    - items: Item[] (0..n)
+    - status: RoundStatus (1..1)
+}
+
+enum DiningSessionStatus {
+    RESERVED
+    ACTIVE
+    CANCELLED
+    WAITING_FOR_BILLING
+    TERMINATED
+}
+
+enum PricingProfile {
+    ALL_INCLUSIVE_NORMAL
+    ALL_INCLUSIVE_LUNCH_WEEKDAY
+    ALL_INCLUSIVE_LUNCH_LARGE_GROUP
+}
+
+enum RoundStatus {
+    DRAFT
+    ORDERED
+}
+
+
+DiningSession o-down- DiningSessionStatus
+DiningSession o-down- TableSession
+DiningSession o-down- Reservation
+DiningSession o-down- PricingProfile
+
+TableSession o-down- Round
+
+Round o-down- RoundStatus
+Round o-down- Item
+
+@enduml

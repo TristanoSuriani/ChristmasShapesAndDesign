@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weer App</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+<div class="container mx-auto max-w-md p-4">
+
+    <h1 class="text-3xl font-bold mb-4 text-center">Weer App</h1>
+
+
+
+    <div class="bg-white rounded-lg shadow-md p-6">
+
+        <div class="mb-4">
+
+            <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Locatie</label>
+
+            <input type="text" id="location" value="Zuidlaren (Drenthe)" class="w-full p-2 border border-gray-300 rounded-md">
+
+        </div>
+
+
+
+        <h2 class="text-xl font-semibold mb-2">Vandaag</h2>
+
+
+
+        <div class="bg-gray-100 rounded-lg p-4 mb-4 flex items-center justify-between">
+
+            <div>
+
+                <span class="text-4xl font-bold">17°C</span>
+
+                <p class="text-sm text-gray-600">lichte jas</p>
+
+            </div>
+
+            <div class="flex items-center">
+
+                <svg class="w-10 h-10 text-yellow-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
+
+                </svg>
+
+                <svg class="w-10 h-10 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+
+                    <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"/>
+
+                </svg>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="mb-4">
+
+            <canvas id="temperatureChart" width="400" height="200"></canvas>
+
+        </div>
+
+
+
+        <div class="flex justify-between mb-4">
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">3 uur later</button>
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">6 uur later</button>
+
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">9 uur later</button>
+
+        </div>
+
+
+
+        <div class="bg-gray-200 rounded-lg p-4">
+
+            <img src="https://via.placeholder.com/400x200.png?text=Kaart+van+Zuidlaren" alt="Kaart van Zuidlaren" class="w-full rounded-md">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    const ctx = document.getElementById('temperatureChart').getContext('2d');
+
+    new Chart(ctx, {
+
+        type: 'line',
+
+        data: {
+
+            labels: ['8 uur', '12 uur', '16 uur'],
+
+            datasets: [{
+
+                label: 'Temperatuur (°C)',
+
+                data: [15, 17, 16],
+
+                borderColor: 'rgb(75, 192, 192)',
+
+                tension: 0.1
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: false
+
+                }
+
+            }
+
+        }
+
+    });
+
+</script>
+
+</body>
+
+</html>
